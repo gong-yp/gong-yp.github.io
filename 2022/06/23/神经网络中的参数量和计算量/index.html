@@ -486,10 +486,13 @@ FLOPS，注意全部大写，即">
 </ul>
 <h3 id="卷积层的参数量"><a href="#卷积层的参数量" class="headerlink" title="卷积层的参数量"></a>卷积层的参数量</h3><ul>
 <li>输入图像：$ {W_1} \times {H_1} \times {C_1} $</li>
-<li>输入图像：$ {W_2} \times {H_2} \times {C_2} $</li>
+<li>输出图像：$ {W_2} \times {H_2} \times {C_2} $</li>
 <li>卷积核：$ {k} \times {k} $</li>
 </ul>
-<h4 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h4><p>$params &#x3D; k \times k \times {C_1} \times {C_2}{\rm{ (no bias)   }}params &#x3D; (k \times k \times {C_1} + 1) \times {C_2}{\rm{ (bias)}}$<br>其中，$k \times k \times {C_1}$为一个卷积核的参数量，+1表示偏置，乘以${C_2}$表示该层有${C_2}$个卷积核</p>
+<h4 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h4><ul>
+<li>$params &#x3D; k \times k \times {C_1} \times {C_2}{\rm{ (no bias)   }}$</li>
+<li>$params &#x3D; (k \times k \times {C_1} + 1) \times {C_2}{\rm{ (bias)}}$<br>其中，$k \times k \times {C_1}$为一个卷积核的参数量，+1表示偏置，乘以${C_2}$表示该层有${C_2}$个卷积核</li>
+</ul>
 
                 
             </div>
