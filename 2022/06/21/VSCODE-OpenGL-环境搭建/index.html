@@ -7,12 +7,12 @@
     <meta name="keywords" content="VSCODE OpenGL 环境搭建, 龚溢鹏的博客">
     <meta name="description" content="[TOC]
 VSCODE OpenGL 环境搭建准备阶段
-VSCODE 配置 C&amp;#x2F;C++ 环境 (安装目录不能有空格！)
+VSCODE 配置 C/C++ 环境 (安装目录不能有空格！)
 下载 CMake  加入到环境变量中
 
 构建 GLFW
 下载 GLFW  
-CMake 编译 GLFW 得到">
+CMake 编译 GLFW 得到 glfw">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -39,7 +39,119 @@ CMake 编译 GLFW 得到">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -481,7 +593,7 @@ CMake 编译 GLFW 得到">
             <div id="articleContent">
                 <p>[TOC]</p>
 <h2 id="VSCODE-OpenGL-环境搭建"><a href="#VSCODE-OpenGL-环境搭建" class="headerlink" title="VSCODE OpenGL 环境搭建"></a>VSCODE OpenGL 环境搭建</h2><h3 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h3><ul>
-<li>VSCODE 配置 C&#x2F;C++ 环境 (安装目录不能有空格！)</li>
+<li>VSCODE 配置 C/C++ 环境 (安装目录不能有空格！)</li>
 <li>下载 <a target="_blank" rel="noopener" href="https://cmake.org/download/">CMake</a>  加入到环境变量中</li>
 </ul>
 <h3 id="构建-GLFW"><a href="#构建-GLFW" class="headerlink" title="构建 GLFW"></a>构建 GLFW</h3><ul>
@@ -496,16 +608,16 @@ CMake 编译 GLFW 得到">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ gcc .\src\glad.c -c -I.\include\</span><br><span class="line">$ ar -rc libglad.a glad.o</span><br></pre></td></tr></table></figure>
 
 <h3 id="新建-OpenGL-程序"><a href="#新建-OpenGL-程序" class="headerlink" title="新建 OpenGL 程序"></a>新建 OpenGL 程序</h3><ul>
-<li>安装插件 C&#x2F;C++ Project Generator</li>
+<li>安装插件 C/C++ Project Generator</li>
 <li>创建 C++ 程序（Ctrl Shift P -&gt; Create C++…）</li>
 <li>.vscode 下 c_cpp_properties.json 添加</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;compilerPath&quot;</span>: <span class="string">&quot;D:\\mingw64\\bin\\g++.exe&quot;</span>, <span class="comment"># your path</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;windows-gcc-x64&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"compilerPath"</span>: <span class="string">"D:\\mingw64\\bin\\g++.exe"</span>, <span class="comment"># your path</span></span><br><span class="line"></span><br><span class="line"><span class="string">"intelliSenseMode"</span>: <span class="string">"windows-gcc-x64"</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>.vscode 下 lunch.json  添加</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;program&quot;</span>: <span class="string">&quot;<span class="variable">$&#123;workspaceFolder&#125;</span>/output/main.exe&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"program"</span>: <span class="string">"<span class="variable">${workspaceFolder}</span>/output/main.exe"</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>将 GLFW、GLAD 编译后文件放入指定文件夹<ul>
@@ -527,7 +639,7 @@ CMake 编译 GLFW 得到">
 <ul>
 <li>测试程序</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;glad/glad.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;GLFW/glfw3.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">// settings</span></span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">int</span> SCR_WIDTH = <span class="number">800</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">int</span> SCR_HEIGHT = <span class="number">600</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// glfw: initialize and configure</span></span><br><span class="line">	<span class="comment">// ------------------------------</span></span><br><span class="line">	<span class="built_in">glfwInit</span>();</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>);</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MINOR, <span class="number">3</span>);</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br><span class="line">	<span class="meta">#<span class="keyword">ifdef</span> __APPLE__</span></span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); <span class="comment">//uncomment this statement to fix compilation on OS X</span></span><br><span class="line">	<span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="comment">// glfw window creation</span></span><br><span class="line">	<span class="comment">// --------------------</span></span><br><span class="line">	GLFWwindow *window = <span class="built_in">glfwCreateWindow</span>(SCR_WIDTH, SCR_HEIGHT, <span class="string">&quot;OpenGL&quot;</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">if</span> (window == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;Failed to create GLFW window&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="built_in">glfwTerminate</span>();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">glfwMakeContextCurrent</span>(window);</span><br><span class="line">	<span class="comment">// glad: load all OpenGL function pointers</span></span><br><span class="line">	<span class="comment">// ---------------------------------------</span></span><br><span class="line">	<span class="keyword">if</span> (!<span class="built_in">gladLoadGLLoader</span>((GLADloadproc)glfwGetProcAddress))</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;Failed to initialize GLAD&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// render loop</span></span><br><span class="line">	<span class="comment">// -----------</span></span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">glfwWindowShouldClose</span>(window))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">glClearColor</span>(<span class="number">1.0f</span>, <span class="number">0.f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>);</span><br><span class="line">		<span class="built_in">glClear</span>(GL_COLOR_BUFFER_BIT);</span><br><span class="line">		<span class="comment">// glfw: swap buffers and poll IO events (keyspressed/released, mouse moved etc.)</span></span><br><span class="line">		<span class="comment">// ---------------------------------------------------</span></span><br><span class="line">		<span class="built_in">glfwSwapBuffers</span>(window);</span><br><span class="line">		<span class="built_in">glfwPollEvents</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// glfw: terminate, clearing all previously allocated GLFWresources.</span></span><br><span class="line">	<span class="comment">//---------------------------------------------------------------</span></span><br><span class="line">	<span class="built_in">glfwTerminate</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;glad/glad.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;GLFW/glfw3.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">// settings</span></span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">int</span> SCR_WIDTH = <span class="number">800</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">int</span> SCR_HEIGHT = <span class="number">600</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="comment">// glfw: initialize and configure</span></span><br><span class="line">	<span class="comment">// ------------------------------</span></span><br><span class="line">	<span class="built_in">glfwInit</span>();</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>);</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MINOR, <span class="number">3</span>);</span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br><span class="line">	<span class="meta">#<span class="keyword">ifdef</span> __APPLE__</span></span><br><span class="line">	<span class="built_in">glfwWindowHint</span>(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); <span class="comment">//uncomment this statement to fix compilation on OS X</span></span><br><span class="line">	<span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="comment">// glfw window creation</span></span><br><span class="line">	<span class="comment">// --------------------</span></span><br><span class="line">	GLFWwindow *window = <span class="built_in">glfwCreateWindow</span>(SCR_WIDTH, SCR_HEIGHT, <span class="string">"OpenGL"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">if</span> (window == <span class="literal">NULL</span>)</span><br><span class="line">	{</span><br><span class="line">		std::cout &lt;&lt; <span class="string">"Failed to create GLFW window"</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="built_in">glfwTerminate</span>();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">glfwMakeContextCurrent</span>(window);</span><br><span class="line">	<span class="comment">// glad: load all OpenGL function pointers</span></span><br><span class="line">	<span class="comment">// ---------------------------------------</span></span><br><span class="line">	<span class="keyword">if</span> (!<span class="built_in">gladLoadGLLoader</span>((GLADloadproc)glfwGetProcAddress))</span><br><span class="line">	{</span><br><span class="line">		std::cout &lt;&lt; <span class="string">"Failed to initialize GLAD"</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">// render loop</span></span><br><span class="line">	<span class="comment">// -----------</span></span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">glfwWindowShouldClose</span>(window))</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">glClearColor</span>(<span class="number">1.0f</span>, <span class="number">0.f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>);</span><br><span class="line">		<span class="built_in">glClear</span>(GL_COLOR_BUFFER_BIT);</span><br><span class="line">		<span class="comment">// glfw: swap buffers and poll IO events (keyspressed/released, mouse moved etc.)</span></span><br><span class="line">		<span class="comment">// ---------------------------------------------------</span></span><br><span class="line">		<span class="built_in">glfwSwapBuffers</span>(window);</span><br><span class="line">		<span class="built_in">glfwPollEvents</span>();</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">// glfw: terminate, clearing all previously allocated GLFWresources.</span></span><br><span class="line">	<span class="comment">//---------------------------------------------------------------</span></span><br><span class="line">	<span class="built_in">glfwTerminate</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
                 
             </div>
